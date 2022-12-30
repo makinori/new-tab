@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="inter/inter.css" />
+		<style>
+			:root {
+				font-family: "Inter", sans-serif;
+			}
+
+			@supports (font-variation-settings: normal) {
+				:root {
+					font-family: "Inter var", sans-serif;
+				}
+			}
+
+			* {
+				margin: 0;
+			}
+
+			body {
+				background-color: #1d1f21;
+				overflow: hidden;
+			}
+
+			.fullscreen {
+				position: fixed;
+				margin: auto;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+
+			.top-left {
+				position: fixed;
+				margin: auto;
+				top: 0;
+				left: 0;
+			}
+
+			.bottom-left {
+				position: fixed;
+				margin: auto;
+				bottom: 0;
+				left: 0;
+			}
+
+			#bg {
+				filter: blur(128px);
+				margin: -128px;
+			}
+
+			.bg-overlay {
+				background-color: #1d1f21;
+				opacity: 0.5;
+			}
+
+			.info {
+				color: #fff;
+				padding: 64px;
+				display: inline-block;
+			}
+
+			#time {
+				font-weight: 800;
+				letter-spacing: -0.05em;
+				font-size: 6rem;
+				line-height: 6rem;
+			}
+
+			#date {
+				font-weight: 500;
+				letter-spacing: -0.05em;
+				font-size: 2.5rem;
+				line-height: 2.5rem;
+			}
+
+			/* a {
+				text-decoration: inherit;
+				color: inherit;
+			}
+
+			.icon {
+				fill: #fff;
+				width: 32px;
+				height: 32px;
+			}
+
+			.links {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.links .icon {
+				margin-right: 8px;
+			} */
+		</style>
+	</head>
+	<body>
+		<div class="fullscreen" id="bg"></div>
+		<div class="fullscreen bg-overlay"></div>
+		<div class="top-left">
+			<div class="info">
+				<p id="time"></p>
+				<p id="date" style="margin-top: 16px"></p>
+				<!-- <div class="links" style="margin-top: 16px">
+					<a href="https://reddit.com">
+						<svg class="icon" viewBox="0 0 60 60">
+							<path
+								d="M30,0C46.557,0 60,13.443 60,30C60,46.557 46.557,60 30,60C13.443,60 0,46.557 0,30C0,13.443 13.443,0 30,0ZM50,30C50,27.79 48.21,26 46,26C44.55,26 43.28,26.77 42.58,27.93C39.682,25.684 35.588,24.229 31.007,24.038L32.809,13.232L39.758,14.97C39.84,14.991 39.921,14.981 40.002,14.981C40.002,14.988 40,14.994 40,15C40,16.657 41.343,18 43,18C44.657,18 46,16.657 46,15C46,13.343 44.657,12 43,12C42.018,12 41.155,12.479 40.607,13.208C40.502,13.127 40.379,13.065 40.242,13.03L32.242,11.03C31.971,10.96 31.686,11.01 31.452,11.164C31.219,11.316 31.06,11.561 31.014,11.836L29.014,23.836C29.002,23.905 29.018,23.97 29.021,24.037C24.428,24.223 20.324,25.68 17.42,27.93C16.72,26.77 15.45,26 14,26C11.79,26 10,27.79 10,30C10,31.96 11.4,33.58 13.26,33.93C13.09,34.6 13,35.29 13,36C13,42.63 20.61,48 30,48C39.39,48 47,42.63 47,36C47,35.29 46.91,34.6 46.74,33.93C48.6,33.58 50,31.96 50,30ZM37.617,41.497C35.557,43.111 32.852,44 30,44C27.148,44 24.443,43.111 22.383,41.497C21.948,41.156 21.872,40.528 22.213,40.093C22.554,39.659 23.182,39.581 23.617,39.923C25.326,41.263 27.594,42 30,42C32.406,42 34.674,41.263 36.383,39.923C36.818,39.581 37.446,39.659 37.787,40.093C38.128,40.528 38.052,41.156 37.617,41.497ZM37,36C35.343,36 34,34.657 34,33C34,31.343 35.343,30 37,30C38.657,30 40,31.343 40,33C40,34.657 38.657,36 37,36ZM20,33C20,31.343 21.343,30 23,30C24.657,30 26,31.343 26,33C26,34.657 24.657,36 23,36C21.343,36 20,34.657 20,33Z"
+							/>
+						</svg>
+					</a>
+				</div> -->
+			</div>
+		</div>
+		<!-- <div class="bottom-left">
+			<div class="info">hi</div>
+		</div> -->
+		<!-- <script src="images/lain/images.js"></script> -->
+		<script src="meshgrad.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
