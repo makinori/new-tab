@@ -18,13 +18,13 @@ function updateBg() {
 const date = new Date();
 
 const weekdays = [
+	"sunday",
 	"monday",
 	"tuesday",
 	"wednesday",
 	"thursday",
 	"friday",
 	"saturday",
-	"sunday",
 ];
 
 const months = [
@@ -55,7 +55,7 @@ const stNdRdTh = n => {
 	}
 };
 
-document.getElementById("date").textContent = `${weekdays[date.getDay() - 1]} ${
+document.getElementById("date").textContent = `${weekdays[date.getDay()]} ${
 	months[date.getMonth()]
 } ${stNdRdTh(date.getDate())}`;
 
