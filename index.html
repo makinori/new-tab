@@ -1,16 +1,22 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="inter/inter.css" />
+		<!-- <link rel="stylesheet" href="inter/inter.css" /> -->
+		<link
+			rel="stylesheet"
+			href="sf-compact-rounded/sf-compact-rounded.css"
+		/>
 		<style>
 			:root {
-				font-family: "Inter", sans-serif;
+				/* font-family: "Inter", sans-serif; */
+				font-family: "SF Compact Rounded", sans-serif;
 			}
 
-			@supports (font-variation-settings: normal) {
+			/* @supports (font-variation-settings: normal) {
 				:root {
 					font-family: "Inter var", sans-serif;
+					
 				}
-			}
+			} */
 
 			* {
 				margin: 0;
@@ -45,13 +51,14 @@
 			}
 
 			#bg {
-				filter: blur(128px);
-				margin: -128px;
+				/* filter: blur(128px);
+				margin: -128px; */
+				background-color: #231929; /* hexcorp dark */
 			}
 
 			.bg-overlay {
-				background-color: #1d1f21;
-				opacity: 0.5;
+				background-color: #231929;
+				opacity: 0.9;
 			}
 
 			.info {
@@ -62,14 +69,18 @@
 
 			#time {
 				font-weight: 800;
-				letter-spacing: -0.05em;
-				font-size: 6rem;
-				line-height: 6rem;
+				/* letter-spacing: -0.05em; */
+				letter-spacing: -0.03em;
+				/* font-size: 6rem;
+				line-height: 6rem; */
+				font-size: 7rem;
+				line-height: 7rem;
 			}
 
 			#date {
 				font-weight: 500;
-				letter-spacing: -0.05em;
+				/* letter-spacing: -0.05em; */
+				letter-spacing: -0.03em;
 				font-size: 2.5rem;
 				line-height: 2.5rem;
 			}
