@@ -2,7 +2,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 100;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Ultralight.otf") format("opentype");
 }
 
@@ -10,7 +10,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 200;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Thin.otf") format("opentype");
 }
 
@@ -18,7 +18,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 300;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Light.otf") format("opentype");
 }
 
@@ -26,7 +26,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 400;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Regular.otf") format("opentype");
 }
 
@@ -34,7 +34,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 500;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Medium.otf") format("opentype");
 }
 
@@ -42,7 +42,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 600;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Semibold.otf") format("opentype");
 }
 
@@ -50,7 +50,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 700;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Bold.otf") format("opentype");
 }
 
@@ -58,7 +58,7 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 800;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Heavy.otf") format("opentype");
 }
 
@@ -66,6 +66,6 @@
 	font-family: "SF Compact Rounded";
 	font-style: normal;
 	font-weight: 900;
-	font-display: swap;
+	font-display: block;
 	src: url("SF-Compact-Rounded-Black.otf") format("opentype");
 }
