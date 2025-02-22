@@ -55,15 +55,12 @@ const stNdRdTh = n => {
 	}
 };
 
-document.getElementById("date").textContent = `${weekdays[date.getDay()]} ${
-	months[date.getMonth()]
-} ${stNdRdTh(date.getDate())}`;
-
 const timeEl = document.getElementById("time");
+const dateEl = document.getElementById("date");
 
 let lastTimeStr = "";
 
-function updateTime() {
+function updateTimeDate() {
 	const time = new Date();
 	const timeStr =
 		String(time.getHours()).padStart(2, "0") +
@@ -75,7 +72,11 @@ function updateTime() {
 		timeEl.textContent = timeStr;
 		updateBg();
 	}
+
+	dateEl.textContent = `${weekdays[date.getDay()]} ${
+		months[date.getMonth()]
+	} ${stNdRdTh(date.getDate())}`;
 }
 
-updateTime();
-setInterval(updateTime, 100);
+updateTimeDate();
+setInterval(updateTimeDate, 100);
