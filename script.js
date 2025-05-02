@@ -62,14 +62,14 @@ let lastTimeStr = "";
 
 function updateTimeDate() {
 	const time = new Date();
-	const timeStr =
+	const timeHTML =
 		String(time.getHours()).padStart(2, "0") +
-		":" +
+		"<span>:</span>" +
 		String(time.getMinutes()).padStart(2, "0");
 
-	if (lastTimeStr != timeStr) {
-		lastTimeStr = timeStr;
-		timeEl.textContent = timeStr;
+	if (lastTimeStr != timeHTML) {
+		lastTimeStr = timeHTML;
+		timeEl.innerHTML = timeHTML;
 		updateBg();
 	}
 

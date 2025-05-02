@@ -5,10 +5,22 @@
 			rel="stylesheet"
 			href="sf-compact-rounded/sf-compact-rounded.css"
 		/> -->
-		<link rel="stylesheet" href="sn-pro/sn-pro.css" />
+		<!-- <link rel="stylesheet" href="sn-pro/sn-pro.css" /> -->
 		<style>
 			* {
 				margin: 0;
+			}
+
+			@font-face {
+				font-family: "Maki Libertinus Mono";
+				src: url(fonts/MakiLibertinusMono-Regular.woff2) format(woff2);
+				font-weight: 400;
+			}
+
+			@font-face {
+				font-family: "Maki Libertinus Mono";
+				src: url(fonts/MakiLibertinusMono-Bold.woff2) format(woff2);
+				font-weight: 700;
 			}
 
 			body {
@@ -16,7 +28,7 @@
 				overflow: hidden;
 				/* font-family: "Inter", sans-serif; */
 				/* font-family: "SF Compact Rounded", sans-serif; */
-				font-family: "SN Pro", sans-serif;
+				/* font-family: "SN Pro", sans-serif; */
 			}
 
 			.fullscreen {
@@ -47,12 +59,12 @@
 				margin: -128px; */
 				/* hexcorp dark */
 				/* background-color: #231929;  */
-				background-color: #222;
+				background-color: #111;
 			}
 
 			.bg-overlay {
 				background-color: #222;
-				opacity: 0.9;
+				opacity: 0.95;
 			}
 
 			.info {
@@ -62,20 +74,32 @@
 			}
 
 			#time {
-				font-weight: 800;
-				/* letter-spacing: -0.05em; */
-				letter-spacing: -0.03em;
-				/* font-size: 6rem;
-				line-height: 6rem; */
 				font-size: 7rem;
 				line-height: 7rem;
+
+				/* letter-spacing: -0.05em; */
+				/* font-size: 6rem;
+				line-height: 6rem; */
+
+				/* sn pro */
+				/* font-weight: 800; */
+				/* letter-spacing: -0.03em; */
+
+				/* maki libertinus mono */
+				font-weight: bold;
+				letter-spacing: -0.02em;
+			}
+
+			#time > span {
+				letter-spacing: -0.16em;
 			}
 
 			#date {
 				/* font-weight: 500; */
-				font-weight: 600;
+				/* font-weight: 600; */ /* sn pro */
+				font-weight: 400;
 				/* letter-spacing: -0.05em; */
-				letter-spacing: -0.03em;
+				letter-spacing: -0.02em;
 				font-size: 2.5rem;
 				line-height: 2.5rem;
 			}
