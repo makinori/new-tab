@@ -1,10 +1,10 @@
 {
-	"name": "Maki New Tab",
+	"name": "maki new tab",
 	"author": "Maki",
-	"homepage_url": "https://makidrone.io",
+	"homepage_url": "https://maki.cafe",
 	"version": "1.0.0",
 	"manifest_version": 2,
-	"description": "Simple and pretty",
+	"description": "simple new tab page",
 	"icons": {
 		"16": "icon16.png",
 		"48": "icon48.png",
