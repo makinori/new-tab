@@ -73,9 +73,11 @@ function updateTimeDate() {
 		updateBg();
 	}
 
-	dateEl.textContent = `${weekdays[date.getDay()]} ${
-		months[date.getMonth()]
-	} ${stNdRdTh(date.getDate())}`;
+	dateEl.textContent = [
+		weekdays[date.getDay()],
+		months[date.getMonth()],
+		stNdRdTh(date.getDate()),
+	].join(" ");
 }
 
 updateTimeDate();
