@@ -15,17 +15,7 @@ function updateBg() {
 	bgEl.style.backgroundImage = meshGradient.backgroundImage;
 }
 
-const date = new Date();
-
-const weekdays = [
-	"sunday",
-	"monday",
-	"tuesday",
-	"wednesday",
-	"thursday",
-	"friday",
-	"saturday",
-];
+const weekdays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 
 const months = [
 	"jan",
@@ -57,27 +47,46 @@ const stNdRdTh = n => {
 
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
+const timezonesEl = document.getElementById("timezones");
 
 let lastTimeStr = "";
 
-function updateTimeDate() {
-	const time = new Date();
-	const timeHTML =
-		String(time.getHours()).padStart(2, "0") +
-		"<span>:</span>" +
-		String(time.getMinutes()).padStart(2, "0");
+function timeString(date, connector) {
+	return (
+		String(date.getHours()).padStart(2, "0") +
+		connector +
+		String(date.getMinutes()).padStart(2, "0")
+	);
+}
 
-	if (lastTimeStr != timeHTML) {
-		lastTimeStr = timeHTML;
-		timeEl.innerHTML = timeHTML;
-		updateBg();
+function getTZ(tz) {
+	return new Date(new Date().toLocaleString(undefined, { timeZone: tz }));
+}
+
+function updateTimeDate() {
+	const now = new Date();
+
+	const timeHTML = timeString(now, "<span>:</span>");
+	if (lastTimeStr == timeHTML) {
+		return;
 	}
 
+	lastTimeStr = timeHTML;
+	timeEl.innerHTML = timeHTML;
+	updateBg();
+
 	dateEl.textContent = [
-		weekdays[date.getDay()],
-		months[date.getMonth()],
-		stNdRdTh(date.getDate()),
+		weekdays[now.getDay()],
+		months[now.getMonth()],
+		// stNdRdTh(now.getDate()),
+		now.getDate(),
 	].join(" ");
+
+	timezonesEl.innerHTML = [
+		"SFO " + timeString(getTZ("America/Los_Angeles"), ":"),
+		"CLE " + timeString(getTZ("America/New_York"), ":"),
+		"TFS " + timeString(getTZ("Atlantic/Canary"), ":"),
+	].join("</br>");
 }
 
 updateTimeDate();
