@@ -19,6 +19,21 @@ function updateBg() {
 	const meshGradient = generateJSXMeshGradient(64);
 	bgEl.style.backgroundColor = meshGradient.backgroundColor;
 	bgEl.style.backgroundImage = meshGradient.backgroundImage;
+	// can fix banding by rendering to canvas and do
+	/*
+		// https://github.com/godotengine/godot/blob/master/servers/rendering/renderer_rd/shaders/effects/tonemap.glsl
+		// From https://alex.vlachos.com/graphics/Alex_Vlachos_Advanced_VR_Rendering_GDC2015.pdf
+		// and https://www.shadertoy.com/view/MslGR8 (5th one starting from the bottom)
+		// NOTE: `frag_coord` is in pixels (i.e. not normalized UV).
+		vec3 screenSpaceDither(vec2 frag_coord, float bit_alignment_diviser) {
+			// Iestyn's RGB dither (7 asm instructions) from Portal 2 X360, slightly modified for VR.
+			vec3 dither = vec3(dot(vec2(171.0, 231.0), frag_coord));
+			dither.rgb = fract(dither.rgb / vec3(103.0, 71.0, 97.0));
+
+			// Subtract 0.5 to avoid slightly brightening the whole viewport.
+			return (dither.rgb - 0.5) / bit_alignment_diviser;
+		}
+	*/
 }
 
 const weekdays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
