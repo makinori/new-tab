@@ -1,3 +1,9 @@
+const timezones = [
+	["SFO", "America/Los_Angeles"],
+	["CLE", "America/New_York"],
+	["TFS", "Atlantic/Canary"],
+];
+
 // const imagesUrl = "images/lain/";
 
 // const randomImageUrl =
@@ -33,16 +39,11 @@ const months = [
 ];
 
 const stNdRdTh = n => {
-	switch (n % 10) {
-		case 1:
-			return n + "st";
-		case 2:
-			return n + "nd";
-		case 3:
-			return n + "rd";
-		default:
-			return n + "th";
-	}
+	n = n % 10;
+	if (n == 1) return n + "st";
+	if (n == 2) return n + "nd";
+	if (n == 3) return n + "rd";
+	return n + "th";
 };
 
 const timeEl = document.getElementById("time");
@@ -51,17 +52,13 @@ const timezonesEl = document.getElementById("timezones");
 
 let lastTimeStr = "";
 
-function timeString(date, connector) {
-	return (
-		String(date.getHours()).padStart(2, "0") +
-		connector +
-		String(date.getMinutes()).padStart(2, "0")
-	);
-}
+const timeString = (date, connector) =>
+	String(date.getHours()).padStart(2, "0") +
+	connector +
+	String(date.getMinutes()).padStart(2, "0");
 
-function getTZ(tz) {
-	return new Date(new Date().toLocaleString(undefined, { timeZone: tz }));
-}
+const getTZ = tz =>
+	new Date(new Date().toLocaleString(undefined, { timeZone: tz }));
 
 function updateTimeDate() {
 	const now = new Date();
@@ -82,11 +79,20 @@ function updateTimeDate() {
 		now.getDate(),
 	].join(" ");
 
-	timezonesEl.innerHTML = [
-		"SFO " + timeString(getTZ("America/Los_Angeles"), ":"),
-		"CLE " + timeString(getTZ("America/New_York"), ":"),
-		"TFS " + timeString(getTZ("Atlantic/Canary"), ":"),
-	].join("</br>");
+	let timezonesHTML = [];
+
+	for (const [name, tz] of timezones) {
+		let time = getTZ(tz);
+
+		if (Math.abs(now - time) < 1000 * 10) {
+			// within 10 seconds of now
+			continue;
+		}
+
+		timezonesHTML.push(name + " " + timeString(time, ":"));
+	}
+
+	timezonesEl.innerHTML = timezonesHTML.join("</br>");
 }
 
 updateTimeDate();
