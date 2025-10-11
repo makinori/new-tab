@@ -2,6 +2,7 @@ const timezones = [
 	["SFO", "America/Los_Angeles"],
 	["CLE", "America/New_York"],
 	["TFS", "Atlantic/Canary"],
+	["MEL", "Australia/Melbourne"],
 ];
 
 // const imagesUrl = "images/lain/";
